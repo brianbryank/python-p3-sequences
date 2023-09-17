@@ -15,7 +15,8 @@ class TestPrintFibonacci:
         sys.stdout = captured_out
         print_fibonacci(0)
         sys.stdout = sys.__stdout__
-        assert(captured_out.getvalue() == '[]\n')
+        assert captured_out.getvalue().strip() == '[]'
+
 
     def test_print_fibonacci_one(self):
         '''prints 0 when length = 1'''
